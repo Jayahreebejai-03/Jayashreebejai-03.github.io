@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jayashree P — Underwriting Specialist & Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A5C;
+    --navy-light: #2A5A8C;
+    --navy-pale: #e8f0fa;
+    --navy-pale2: #f0f5fb;
+    --gold: #C9A84C;
+    --white: #ffffff;
+    --text: #1a2332;
+    --text-muted: #5a6a7e;
+    --text-light: #8a9ab0;
+    --border: #dde5f0;
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 58px;
+    box-shadow: 0 2px 12px rgba(27,58,92,0.18);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 18px;
+    letter-spacing: 0.3px;
+  }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-avatar {
+    width: 90px; height: 90px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 2.5px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; color: #fff;
+    margin: 0 auto 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: #fff; font-size: 34px; font-weight: 600;
+    margin-bottom: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-title {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px; letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-divider {
+    width: 40px; height: 2px;
+    background: var(--gold);
+    margin: 0 auto 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-badges {
+    display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+  }
+  .badge {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.92);
+    font-size: 12px; padding: 5px 13px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.22);
+  }
+  .hero-actions {
+    display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;
+    position: relative; z-index: 1;
+  }
+  .btn-primary {
+    background: var(--white); color: var(--navy);
+    font-size: 13px; font-weight: 600;
+    padding: 10px 22px; border-radius: 8px;
+    border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #e8f0fe; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: #fff;
+    font-size: 13px; font-weight: 500;
+    padding: 10px 22px; border-radius: 8px;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+
+  /* CONTACT BAR */
+  .contact-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 13px; color: var(--text-muted);
+    text-decoration: none;
+  }
+  .contact-item i { color: var(--navy); font-size: 14px; }
+  .contact-item:hover { color: var(--navy); }
+
+  /* SECTIONS */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.75rem 2rem;
+  }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 1.75rem;
+  }
+  .section-icon {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--navy-pale);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-icon i { color: var(--navy); font-size: 15px; }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--text);
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* ABOUT */
+  .summary-text {
+    font-size: 14.5px; color: var(--text-muted); line-height: 1.85;
+    background: var(--navy-pale2);
+    border-left: 3px solid var(--navy);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+  }
+  .ach-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .ach-card:hover { box-shadow: 0 4px 16px rgba(27,58,92,0.1); }
+  .ach-icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: var(--navy-pale);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  .ach-icon i { color: var(--navy); font-size: 16px; }
+  .ach-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+  .ach-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
+
+  /* EXPERIENCE */
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s;
+  }
+  .exp-card:last-child { margin-bottom: 0; }
+  .exp-card:hover { box-shadow: 0 4px 18px rgba(27,58,92,0.09); }
+  .exp-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 1rem;
+    margin-bottom: 0.85rem;
+  }
+  .exp-left { display: flex; gap: 13px; align-items: flex-start; }
+  .exp-logo {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--navy); color: #fff;
+    font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; line-height: 1.3; flex-shrink: 0;
+    letter-spacing: 0.3px;
+  }
+  .exp-title { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .exp-company { font-size: 13px; color: var(--navy); font-weight: 500; }
+  .exp-date { font-size: 12px; color: var(--text-light); white-space: nowrap; padding-top: 3px; }
+  .exp-tag {
+    display: inline-block; font-size: 11.5px; color: var(--navy);
+    background: var(--navy-pale); padding: 3px 10px; border-radius: 4px;
+    margin-bottom: 0.85rem; font-weight: 500;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 13.5px; color: var(--text-muted); line-height: 1.7;
+    padding: 3px 0 3px 1.1rem; position: relative;
+  }
+  .exp-bullets li::before {
+    content: "▸"; position: absolute; left: 0;
+    color: var(--navy); font-size: 10px; top: 6px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+  }
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+  }
+  .skill-group-title {
+    font-size: 11px; font-weight: 600; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.7px;
+    margin-bottom: 0.75rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    background: var(--navy-pale2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px; padding: 4px 10px; border-radius: 5px;
+  }
+
+  /* EDUCATION */
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.4rem;
+    display: flex; align-items: flex-start; gap: 13px;
+    margin-bottom: 0.85rem;
+  }
+  .edu-card:last-child { margin-bottom: 0; }
+  .edu-icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .edu-icon i { color: #fff; font-size: 16px; }
+  .edu-degree { font-size: 14px; font-weight: 600; color: var(--text); }
+  .edu-grade { color: var(--navy); font-size: 13px; font-weight: 500; margin-left: 6px; }
+  .edu-school { font-size: 13px; color: var(--navy); margin-top: 2px; }
+  .edu-meta { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  /* PROJECT */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+  .project-title { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .project-sub { font-size: 12.5px; color: var(--text-light); margin-bottom: 1rem; }
+  .project-bullets { list-style: none; }
+  .project-bullets li {
+    font-size: 13.5px; color: var(--text-muted); line-height: 1.7;
+    padding: 3px 0 3px 1.1rem; position: relative;
+  }
+  .project-bullets li::before {
+    content: "▸"; position: absolute; left: 0;
+    color: var(--gold); font-size: 10px; top: 6px;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-list { display: flex; flex-wrap: wrap; gap: 9px; }
+  .cert-tag {
+    background: var(--navy-pale);
+    color: var(--navy);
+    font-size: 13px; font-weight: 500;
+    padding: 6px 16px; border-radius: 20px;
+    border: 1px solid #b8d0ea;
+  }
+
+  /* LANGUAGES */
+  .lang-list { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .lang-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .lang-flag { font-size: 26px; }
+  .lang-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .lang-level { font-size: 11.5px; color: var(--text-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 0.85rem; flex-wrap: wrap; }
+  .footer-links a {
+    color: rgba(255,255,255,0.7); font-size: 13.5px;
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+  }
+  .footer-links a:hover { color: #fff; }
+  footer p { color: rgba(255,255,255,0.45); font-size: 12.5px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 26px; }
+    .section { padding: 2rem 1.25rem; }
+    .exp-header { flex-direction: column; gap: 0.4rem; }
+    .exp-date { padding-top: 0; }
+    .contact-bar { gap: 1rem; padding: 0.75rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Jayashree P</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-avatar">JP</div>
+  <h1>Jayashree P</h1>
+  <p class="hero-title">Underwriting Support Specialist &nbsp;·&nbsp; Lloyd's Market &nbsp;·&nbsp; Data Analyst</p>
+  <div class="hero-divider"></div>
+  <div class="hero-badges">
+    <span class="badge"><i class="fa-solid fa-location-dot"></i> Mangalore, India</span>
+    <span class="badge">T100 UK General Insurance</span>
+    <span class="badge">Lloyd's Market</span>
+    <span class="badge">Python &amp; Data Analysis</span>
+    <span class="badge">Open to opportunities</span>
+  </div>
+  <div class="hero-actions">
+    <a href="mailto:jayabejai.03@gmail.com" class="btn-primary">Get in touch</a>
+    <a href="https://www.linkedin.com/in/jaya-shree-08534028b" target="_blank" class="btn-outline">View LinkedIn</a>
+  </div>
+</section>
+
+<div class="contact-bar">
+  <a href="mailto:jayabejai.03@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> jayabejai.03@gmail.com</a>
+  <a href="tel:+918139985654" class="contact-item"><i class="fa-solid fa-phone"></i> +91 8139985654</a>
+  <a href="https://www.linkedin.com/in/jaya-shree-08534028b" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/jaya-shree-08534028b</a>
+</div>
+
+<main>
+
+  <section class="section" id="about">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-user"></i></div>
+      <h2>About</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="summary-text">Results-driven Underwriting Support Specialist with hands-on experience in UK Lloyd's Market operations at Infosys BPM, supporting Axis Capital (Syndicate). Adept at processing 20+ Lines of Business including UDC, Open Market Slips, Intrali, and Bordereaux/BDX with a consistent record of SLA compliance and data accuracy. Combines strong insurance domain expertise with technical proficiency in Python and data analysis. Holds T100 UK General Insurance certification and is pursuing ACII to progress toward a full underwriting career. Flexible to work remotely or relocate for the right opportunity.</p>
+  </section>
+
+  <section class="section" id="achievements">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-trophy"></i></div>
+      <h2>Key achievements</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="achievement-grid">
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="ach-title">Spot Award — Q2</div>
+        <div class="ach-desc">Recognised at Infosys BPM for outstanding performance and immediate operational improvements within the first year.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="ach-title">Zero SLA breaches</div>
+        <div class="ach-desc">Consistently processed Open Market Policies within TAT with full compliance across 20+ Lines of Business.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <div class="ach-title">Research impact</div>
+        <div class="ach-desc">Master's thesis contributed to a 25% improvement in understanding of Arctic ozone phenomena among climatologists.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="ach-title">Month-end close</div>
+        <div class="ach-desc">Executed accurate and timely financial close reporting in full compliance with financial standards.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-left">
+          <div class="exp-logo">INF<br>BPM</div>
+          <div>
+            <div class="exp-title">Senior Process Executive (JL2) — Underwriting Support</div>
+            <div class="exp-company">Infosys BPM &nbsp;·&nbsp; Mangalore, India</div>
+          </div>
+        </div>
+        <div class="exp-date">Oct 2024 – Present</div>
+      </div>
+      <span class="exp-tag">Process: Axis Capital UK (Lloyd's Market – Syndicate)</span>
+      <ul class="exp-bullets">
+        <li>End-to-end underwriting support for a US-based global insurance firm within the Lloyd's of London market across 20+ Lines of Business (UDC, Open Market Slips, Intrali, Bordereaux/BDX).</li>
+        <li>Processed Open Market Policies within agreed TAT and SLA parameters, maintaining full Lloyd's market compliance and internal rulebook standards.</li>
+        <li>Resolved policy-related queries and documentation discrepancies, minimising operational risk and maintaining service excellence.</li>
+        <li>Collaborated with cross-functional teams across time zones to streamline workflows, enhance productivity, and improve KPI metrics.</li>
+        <li>Recognised with Spot Award in Q2 for outstanding contributions and driving immediate operational improvements.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-left">
+          <div class="exp-logo">VAI<br>DIK</div>
+          <div>
+            <div class="exp-title">Subject Matter Expert</div>
+            <div class="exp-company">Vaidik Eduservices Private Limited &nbsp;·&nbsp; Remote</div>
+          </div>
+        </div>
+        <div class="exp-date">Aug – Oct 2024</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Evaluated insurance and underwriting-related solutions against predefined quality parameters, providing detailed analytical feedback.</li>
+        <li>Maintained high content quality standards through rigorous review and assessment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="project">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-flask"></i></div>
+      <h2>Master's thesis</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Thesis header card -->
+    <div class="project-card" style="margin-bottom: 1.25rem;">
+      <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:1rem;">
+        <div style="width:46px;height:46px;border-radius:10px;background:#1B3A5C;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="fa-solid fa-scroll" style="color:#fff;font-size:18px;"></i>
+        </div>
+        <div>
+          <div class="project-title" style="font-size:15.5px;">Potential Drivers of the Record Low Ozone Values in the Arctic Over the Last Three Decades</div>
+          <div class="project-sub" style="margin-top:4px;">M.Sc. Dissertation &nbsp;·&nbsp; Marine Geology, Mangalore University &nbsp;·&nbsp; May – Aug 2023</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem;">
+        <span style="background:#e8f0fa;color:#1B3A5C;font-size:12px;padding:4px 11px;border-radius:4px;font-weight:500;"><i class="fa-solid fa-user-tie" style="margin-right:5px;font-size:11px;"></i>Dr. Avinash Kumar, Scientist-E — NCPOR, Goa</span>
+        <span style="background:#e8f0fa;color:#1B3A5C;font-size:12px;padding:4px 11px;border-radius:4px;font-weight:500;"><i class="fa-solid fa-user-tie" style="margin-right:5px;font-size:11px;"></i>Prof. Shivanna — Dept. of Marine Geology, Mangalore University</span>
+        <span style="background:#fef9ec;color:#92670a;font-size:12px;padding:4px 11px;border-radius:4px;border:1px solid #f5d98b;font-weight:500;"><i class="fa-solid fa-database" style="margin-right:5px;font-size:11px;"></i>ERA5 · NetCDF · Python · NCEP/NCAR</span>
+        <span style="background:#fef9ec;color:#92670a;font-size:12px;padding:4px 11px;border-radius:4px;border:1px solid #f5d98b;font-weight:500;"><i class="fa-solid fa-globe" style="margin-right:5px;font-size:11px;"></i>60°N – 90°N Arctic polar cap region</span>
+      </div>
+      <!-- Abstract -->
+      <div style="background:#f7f9fc;border-left:3px solid #C9A84C;padding:1rem 1.25rem;border-radius:0 8px 8px 0;margin-bottom:0;">
+        <div style="font-size:11px;font-weight:600;color:#92670a;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Abstract</div>
+        <p style="font-size:13.5px;color:#5a6a7e;line-height:1.8;">This study investigates the three most significant Arctic ozone depletion events of the last three decades — March 1997, 2011, and 2020 — using ERA5 atmospheric reanalysis data from ECMWF. In all three cases, abnormally strong and frigid polar vortex conditions produced historically low Arctic ozone. Notably, the minimum ozone column reached an unprecedented low of 224 DU on 18 March 2020, remaining below 250 DU for most of March and the first half of April — an exceedingly rare and severe event. Arctic ozone similarly decreased in 2011 (247 DU) and 1997 (222 DU). ERA5 data revealed minimum polar cap temperatures consistently below 195 K at ~20 km altitude throughout the 2019/2020 Northern Hemisphere winter, facilitating enhanced polar stratospheric cloud formation and sustained ozone loss through heterogeneous chemistry.</p>
+      </div>
+    </div>
+
+    <!-- Key findings grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:1.25rem;">
+      <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.1rem 1.2rem;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;border-radius:7px;background:#e8f0fa;display:flex;align-items:center;justify-content:center;">
+            <i class="fa-solid fa-temperature-arrow-down" style="color:#1B3A5C;font-size:14px;"></i>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.4px;">Record low: 2020</div>
+        </div>
+        <div style="font-size:22px;font-weight:600;color:#1a2332;margin-bottom:3px;">224 DU</div>
+        <div style="font-size:12.5px;color:#5a6a7e;">Minimum ozone column on 18 March 2020 — the lowest NH polar cap record ever observed.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.1rem 1.2rem;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;border-radius:7px;background:#e8f0fa;display:flex;align-items:center;justify-content:center;">
+            <i class="fa-solid fa-wind" style="color:#1B3A5C;font-size:14px;"></i>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.4px;">Polar vortex</div>
+        </div>
+        <div style="font-size:22px;font-weight:600;color:#1a2332;margin-bottom:3px;">&lt;195 K</div>
+        <div style="font-size:12.5px;color:#5a6a7e;">Sustained polar cap temperatures at 50 hPa throughout winter 2019/2020, enabling PSC formation for ~3.5 months.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.1rem 1.2rem;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;border-radius:7px;background:#e8f0fa;display:flex;align-items:center;justify-content:center;">
+            <i class="fa-solid fa-calendar-days" style="color:#1B3A5C;font-size:14px;"></i>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.4px;">Study period</div>
+        </div>
+        <div style="font-size:22px;font-weight:600;color:#1a2332;margin-bottom:3px;">30 years</div>
+        <div style="font-size:12.5px;color:#5a6a7e;">ERA5 reanalysis data from 1991–2020 at 0.25° × 0.25° resolution across the 60°N–90°N polar cap.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.1rem 1.2rem;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;border-radius:7px;background:#e8f0fa;display:flex;align-items:center;justify-content:center;">
+            <i class="fa-solid fa-chart-line" style="color:#1B3A5C;font-size:14px;"></i>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.4px;">Research impact</div>
+        </div>
+        <div style="font-size:22px;font-weight:600;color:#1a2332;margin-bottom:3px;">+25%</div>
+        <div style="font-size:12.5px;color:#5a6a7e;">Improvement in understanding of Arctic atmospheric ozone phenomena among climatologists.</div>
+      </div>
+    </div>
+
+    <!-- Methodology & chapters -->
+    <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.3rem 1.5rem;margin-bottom:1.25rem;">
+      <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:1rem;">Data &amp; methodology</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#1a2332;margin-bottom:5px;"><i class="fa-solid fa-database" style="color:#1B3A5C;margin-right:6px;font-size:12px;"></i>Data sources</div>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">ERA5 reanalysis (ECMWF) — TCO, temperature, zonal wind</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">NCEP/NCAR Reanalysis 1 (NOAA PSL) — zonal mean profiles</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">NASA Ozone Watch (OMPS) — extended TCO3 time series</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#1a2332;margin-bottom:5px;"><i class="fa-solid fa-code" style="color:#1B3A5C;margin-right:6px;font-size:12px;"></i>Tools used</div>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">Python (Jupyter Notebook) — data processing &amp; plotting</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">CDO (Climate Data Operators) — NetCDF daily mean conversion</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">Microsoft Excel — statistical analysis &amp; visualisation</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#1a2332;margin-bottom:5px;"><i class="fa-solid fa-magnifying-glass-chart" style="color:#1B3A5C;margin-right:6px;font-size:12px;"></i>Analysis conducted</div>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">Climatological means, STDEV &amp; anomaly analysis (1991–2020)</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">Daily &amp; monthly mean TCO3 for JFMA 1997, 2011, 2020</li>
+            <li style="font-size:12.5px;color:#5a6a7e;padding:2px 0;">Spatial plots, zonal wind &amp; temperature at 10 hPa &amp; 50 hPa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key findings -->
+    <div style="background:#fff;border:1px solid #dde5f0;border-radius:12px;padding:1.3rem 1.5rem;margin-bottom:1.25rem;">
+      <div style="font-size:12px;font-weight:600;color:#1B3A5C;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:0.9rem;">Key findings</div>
+      <ul class="project-bullets">
+        <li>All three extreme ozone depletion events (1997, 2011, 2020) were driven by an exceptionally strong and undisturbed polar vortex throughout the Northern Hemisphere winter and early spring, with no significant sudden stratospheric warming (SSW) events to weaken it.</li>
+        <li>In 2019/2020, minimum polar cap temperatures remained below 195 K at 50 hPa (the NAT-PSC formation threshold) from December to early April — approximately 3.5 months — enabling the longest sustained period of polar stratospheric cloud activity among the three events.</li>
+        <li>The 2020 event produced ozone columns below 250 DU for the entirety of March and the first half of April, with the absolute minimum of 224 DU recorded on 18 March — compared with minimums of 247 DU (2011) and 222 DU (1997, limited duration).</li>
+        <li>Zonal wind analysis at 10 hPa and 50 hPa confirmed strong westerly flow during all low-ozone events, consistent with a robust polar vortex preventing meridional mixing and ozone transport from lower latitudes.</li>
+        <li>The anomalously low base TCO3 within the vortex in 2020, combined with reduced meridional ozone transport and active stratospheric chlorine chemistry (ClO-driven), explains why 2020 surpassed 1997 and 2011 as the most severe Arctic ozone loss event on record.</li>
+        <li>ERA5 data revealed that the winter of 2019/2020 represents an archetypal Northern Hemisphere winter with near-zero planetary wave activity — a pattern that, if more frequent, may signal climate-change-driven stratospheric changes.</li>
+      </ul>
+    </div>
+
+    <!-- Insurance relevance callout -->
+    <div style="background:#e8f0fa;border:1px solid #b8d0ea;border-radius:12px;padding:1.1rem 1.4rem;display:flex;gap:12px;align-items:flex-start;">
+      <div style="flex-shrink:0;width:34px;height:34px;border-radius:8px;background:#1B3A5C;display:flex;align-items:center;justify-content:center;">
+        <i class="fa-solid fa-lightbulb" style="color:#fff;font-size:14px;"></i>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#1B3A5C;margin-bottom:4px;">Relevance to insurance &amp; catastrophe risk</div>
+        <p style="font-size:13px;color:#2A5A8C;line-height:1.7;">The analytical methods used in this thesis — large-dataset processing with Python &amp; NetCDF, ERA5 climate reanalysis, spatial risk mapping, anomaly detection, and statistical modelling of extreme events — are directly transferable to catastrophe (CAT) modelling and climate risk roles at firms such as Verisk, Moody's RMS, Aon, and Swiss Re. The study's focus on identifying and quantifying rare extreme atmospheric events mirrors the core work of insurance catastrophe analysts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-code"></i></div>
+      <h2>Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Insurance domain</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Lloyd's Market</span>
+          <span class="skill-tag">Underwriting support</span>
+          <span class="skill-tag">Policy binding</span>
+          <span class="skill-tag">Premium booking</span>
+          <span class="skill-tag">BDX / Bordereaux</span>
+          <span class="skill-tag">SLA management</span>
+          <span class="skill-tag">Open Market Slips</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Systems &amp; tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">IRIS</span>
+          <span class="skill-tag">IDT</span>
+          <span class="skill-tag">IEMS</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">MS Excel</span>
+          <span class="skill-tag">MS Word</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data &amp; analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">NetCDF</span>
+          <span class="skill-tag">ERA5</span>
+          <span class="skill-tag">Data analysis</span>
+          <span class="skill-tag">Spatial plotting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Soft skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Cross-functional collaboration</span>
+          <span class="skill-tag">Problem-solving</span>
+          <span class="skill-tag">Attention to detail</span>
+          <span class="skill-tag">Communication</span>
+          <span class="skill-tag">Creativity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <h2>Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-degree">M.Sc. Marine Geology <span class="edu-grade">· CGPA 8.09/10</span></div>
+        <div class="edu-school">Mangalore University, Karnataka, India</div>
+        <div class="edu-meta">Dec 2021 – Aug 2023</div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fa-solid fa-book"></i></div>
+      <div>
+        <div class="edu-degree">B.Sc. Physics, Chemistry &amp; Mathematics <span class="edu-grade">· 67.17%</span></div>
+        <div class="edu-school">St Aloysius College (Autonomous), Mangalore</div>
+        <div class="edu-meta">Jun 2018 – Jun 2021</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-certificate"></i></div>
+      <h2>Certifications</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="cert-list">
+      <span class="cert-tag">T100 UK General Insurance</span>
+      <span class="cert-tag">AIG Underwriting (Forage)</span>
+      <span class="cert-tag">BCG Climate &amp; Sustainability (Forage)</span>
+      <span class="cert-tag">Fundamentals of Commercial Underwriting — Infosys LEX</span>
+      <span class="cert-tag">Problem Solving &amp; Decision Making 1.0 (JL2)</span>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa-solid fa-paper-plane"></i></div>
+      <h2>Languages</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lang-list">
+      <div class="lang-item">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-name">English</div>
+        <div class="lang-level">Professional</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-flag">🇮🇳</div>
+        <div class="lang-name">Hindi</div>
+        <div class="lang-level">Fluent</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-flag">🇮🇳</div>
+        <div class="lang-name">Kannada</div>
+        <div class="lang-level">Fluent</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:jayabejai.03@gmail.com"><i class="fa-solid fa-envelope"></i> jayabejai.03@gmail.com</a>
+    <a href="tel:+918139985654"><i class="fa-solid fa-phone"></i> +91 8139985654</a>
+    <a href="https://www.linkedin.com/in/jaya-shree-08534028b" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  </div>
+  <p>Jayashree P &nbsp;·&nbsp; Mangalore, India &nbsp;·&nbsp; Open to opportunities worldwide</p>
+</footer>
+
+</body>
+</html>
